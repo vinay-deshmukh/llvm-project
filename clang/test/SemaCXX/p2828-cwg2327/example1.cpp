@@ -1,6 +1,5 @@
 // use 14 as the version _before_ mandatory copy elision
-// TODO remove allow-empty
-// RUN: %clang_cc1 %s -std=c++14 -fsyntax-only -ast-dump 2>&1 | FileCheck -check-prefix=CHECK-CXX14 %s -allow-empty
+// RUN: %clang_cc1 %s -std=c++14 -fsyntax-only -ast-dump 2>&1 | FileCheck -check-prefix=CHECK-CXX14 %s 
 // RUN: %clang_cc1 %s -std=c++17 -fsyntax-only -ast-dump 2>&1 | FileCheck -check-prefix=CHECK-CXX17 %s
 
 // expected-no-diagnostics
