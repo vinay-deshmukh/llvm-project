@@ -10729,6 +10729,11 @@ bool clang::isBetterOverloadCandidate(
     Sema &S, const OverloadCandidate &Cand1, const OverloadCandidate &Cand2,
     SourceLocation Loc, OverloadCandidateSet::CandidateSetKind Kind,
     bool PartialOverloading) {
+  llvm::errs() << "Comparing candidates:\n  ";
+  Cand1.Function->dump();
+  Cand2.Function->dump();
+  llvm::errs() << "\n  ";
+
   // Define viable functions to be better candidates than non-viable
   // functions.
   if (!Cand2.Viable)
